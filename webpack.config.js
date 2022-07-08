@@ -23,12 +23,17 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyPlugin({
-      patterns: [{ from: 'manifest.json' }],
+      patterns: [{ from: 'manifest.json' }, { from: 'icons/*' }],
     }),
     new HtmlWebpackPlugin({
       template: './sidebar/index.html',
