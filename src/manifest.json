@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "RTS Companion",
+  "description": "description",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "background": {
+    "scripts": ["background/background-bundle.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "sidebar_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_panel": "sidebar/index.html",
+    "default_title": "RTS Companion"
+  },
+  "options_ui": {
+    "page": "options/index.html"
+  },
+  "permissions": ["webRequest", "<all_urls>"]
+}
