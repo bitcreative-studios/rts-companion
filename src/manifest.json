@@ -20,7 +20,7 @@
       "64": "icons/icon.png"
     },
     "default_panel": "sidebar/index.html",
-    "default_title": "RTS Companion"
+    "default_title": "RTS Toolbox"
   },
   "options_ui": {
     "page": "options/index.html"

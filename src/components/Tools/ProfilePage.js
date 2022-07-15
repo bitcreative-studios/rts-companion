@@ -7,8 +7,9 @@ import {
   PhoneIcon,
   SearchIcon,
 } from '@heroicons/react/solid'
-import Logo from '../components/Logo'
-import profilePic from '../icons/profile-avatar.jpeg'
+import Logo from '../Logo'
+import profilePic from '../../icons/profile-avatar.jpeg'
+import PnovPackages from './Packages/PNOVPackages'
 
 const user = {
   name: 'Tom Cook',
@@ -292,47 +293,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+const ProfilePage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="flex flex-col min-w-0 flex-1 overflow-hidden">
-      <div className="lg:hidden">
-        <div className="flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-1.5">
-          <div>
-            <Logo className="w-auto h-8" />
-          </div>
-          <div>
-            <button
-              type="button"
-              className="-mr-3 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-600"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <span className="sr-only">Open sidebar</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-        </div>
-      </div>
       <div className="flex-1 relative z-0 flex overflow-hidden">
         <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
           {/* Breadcrumb */}
-          <nav
-            className="flex items-start px-4 py-3 sm:px-6 lg:px-8 xl:hidden"
-            aria-label="Breadcrumb"
-          >
-            <a
-              href="#"
-              className="inline-flex items-center space-x-3 text-sm font-medium text-gray-900"
-            >
-              <ChevronLeftIcon
-                className="-ml-2 h-5 w-5 text-gray-400"
-                aria-hidden="true"
-              />
-              <span>Directory</span>
-            </a>
-          </nav>
-
           <article>
             {/* Profile header */}
             <div>
@@ -415,6 +383,7 @@ export default function Example() {
               </div>
             </div>
 
+            <PnovPackages />
             {/* Description list */}
             <div className="mt-6 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
               <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
@@ -457,7 +426,10 @@ export default function Example() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <a href="#" className="focus:outline-none">
+                      <a
+                        href="src/components/Tools/ProfilePage#"
+                        className="focus:outline-none"
+                      >
                         <span className="absolute inset-0" aria-hidden="true" />
                         <p className="text-sm font-medium text-gray-900">
                           {person.name}
@@ -479,7 +451,10 @@ export default function Example() {
             <p className="mt-1 text-sm text-gray-600">
               Search directory of 3,018 employees
             </p>
-            <form className="mt-6 flex space-x-4" action="#">
+            <form
+              className="mt-6 flex space-x-4"
+              action="src/components/Tools/ProfilePage#"
+            >
               <div className="flex-1 min-w-0">
                 <label htmlFor="search" className="sr-only">
                   Search
@@ -537,7 +512,10 @@ export default function Example() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <a href="#" className="focus:outline-none">
+                          <a
+                            href="src/components/Tools/ProfilePage#"
+                            className="focus:outline-none"
+                          >
                             {/* Extend touch target to entire panel */}
                             <span
                               className="absolute inset-0"
@@ -563,3 +541,4 @@ export default function Example() {
     </div>
   )
 }
+export default ProfilePage
